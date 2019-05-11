@@ -1,12 +1,15 @@
 {
     "private": true,
     "devDependencies": {
-        "gulp": "^4.0.0",
+        "gulp": "^4.0.2",
         "gulp-autoprefixer": "^6.0.0",
         "gulp-clean-css": "^4.0.0",
         "gulp-csscomb": "^3.0.8",
         "gulp-rename": "^1.2.2",
         "gulp-sass": "^4.0.2",
         "gulp-sourcemaps": "^2.6.4"
+    },
+    "dependencies": {
+        "aos": "^2.3.4"
     }
 }

@@ -19,11 +19,14 @@
         {% do assets.addCss('https://unpkg.com/purecss@1.0.0/build/pure-min.css', 100) %}
         {% do assets.addCss('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', 99) %}
         {% do assets.addCss('theme://css/global.css', 98) %}
+        {% do assets.addCss('theme://node_modules/aos/dist/aos.css', 97) %}
     {% endblock %}
     {{ assets.css() }}
 
     {% block javascripts %}
         {% do assets.addJs('jquery', 100) %}
+        {% do assets.addJs('theme://node_modules/aos/dist/aos.js', 99) %}
+        {% do assets.addJs('theme://js/global.js', 98) %}
     {% endblock %}
     {{ assets.js() }}
 
@@ -49,11 +52,7 @@
 {% endblock %}
 
 {% block footer %}
-    <div class="footer text-center">
-        <div class="wrapper padding">
-            <p><a href="http://getgrav.org">Grav</a> was <i class="fa fa-code"></i> with <i class="fa fa-heart"></i> by <a href="http://www.rockettheme.com">RocketTheme</a>.</p>
-        </div>
-    </div>
+    {% include 'partials/footer.html.twig' %}
 {% endblock %}
 
 {% block bottom %}

@@ -1,25 +1,27 @@
-<section class="section inquiry">
-    <div class="container content-wrap">
-        {{content|raw}}
-        {% include "forms/form.html.twig" with { form: forms('contact-form') } %}
-        <div id="form-result"></div>
-        <script>
-            $(document).ready(function(){
-                var form = $('#contact-form');
-                form.submit(function(e) {
-                    e.preventDefault();
-                    $.ajax({
-                        url: form.attr('action'),
-                        type: form.attr('method'),
-                        dataType: 'html',
-                        data: form.serialize(),
-                        success: function(result) {
-                            // Inject the result in the HTML
-                            $('#form-result').html(result);
-                        }
+<section class="section inquiry" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="300" data-aos-once="true">
+    <div class="inquiry-container">
+        <div class="container content-wrap">
+            {{content|raw}}
+            {% include "forms/form.html.twig" with { form: forms('contact-form') } %}
+            <div id="form-result"></div>
+            <script>
+                $(document).ready(function(){
+                    var form = $('#contact-form');
+                    form.submit(function(e) {
+                        e.preventDefault();
+                        $.ajax({
+                            url: form.attr('action'),
+                            type: form.attr('method'),
+                            dataType: 'html',
+                            data: form.serialize(),
+                            success: function(result) {
+                                // Inject the result in the HTML
+                                $('#form-result').html(result);
+                            }
+                        });
                     });
                 });
-            });
-        </script> 
-    </div>
+            </script> 
+        </div>
+    </div>    
 </section>

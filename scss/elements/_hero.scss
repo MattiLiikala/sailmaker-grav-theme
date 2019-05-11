@@ -1,5 +1,5 @@
 .site-hero{
-    height: 80vh;
+    height: 85vh;
     display: flex;
     align-items: flex-end;
     background-size: cover;
@@ -9,10 +9,13 @@
         padding-bottom: 5.6rem;
         h1{
             font-family: $font_script;
-            font-size: $font_size_xl;
+            font-size: $font_size_ml;
             color: white;
             text-shadow: 1px 1px 6px black;
             font-weight: 400;
+            @include breakpoint(phone){
+                font-size: $font_size_xl;
+            }
         }
     }
 }

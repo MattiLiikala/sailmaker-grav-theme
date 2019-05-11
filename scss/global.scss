@@ -12,6 +12,7 @@ body {
     color: $color_body;
     font-family: $font_body;
     max-width: 1500px;
+    overflow-x: hidden;
     margin: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -21,7 +22,8 @@ body {
 @import 'helpers/type';
 @import 'helpers/content';
 
-@import'elements/header';
+@import 'elements/header';
+@import 'elements/footer';
 
 @import 'elements/hero';
 @import 'elements/text';

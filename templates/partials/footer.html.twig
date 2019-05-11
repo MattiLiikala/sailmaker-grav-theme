@@ -1,0 +1,18 @@
+<footer id="footer">
+    <div class="container content-wrap">
+        <div class="content-first">
+            <div class="contact-details">
+                <h3>{{site.footer.contact.title}}</h3>
+                <p>{{site.footer.contact.phone}}<p>
+                <p>{{site.footer.contact.email}}</p>
+                <p>{{site.footer.contact.address}}</p>
+            </div>
+            <div class="social-media">
+                <a href="{{site.footer.facebook}}"><img src="{{ url('theme://images/facebook-app-logo.svg') }}"></a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; {{site.footer.copyright}} {{ "now"|date("Y") }}</p>
+        </div>
+    </div>
+</footer>
