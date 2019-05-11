@@ -1,0 +1,42 @@
+{% macro render_field(form, fields) %}
+    {% for index, field in fields %}
+        {% set input = attribute(field, "input@") %}
+        {% if input is null or input == true %}
+             {# Skips textarea input and renders it at the bottom #}
+            {% if form.value(field.name) and field.type != 'textarea'  %}
+                {% block field %}
+                    
+                        {% block field_label %}
+                            {{ field.label|t|e }}:
+                        {% endblock %}
+
+                        {% block field_value %}
+                            {% if field.type == 'checkboxes' %}
+                                
+                                    {% for value in form.value(field.name) %}
+                                        {{ field.options[value]|e }}
+                                    {% endfor %}
+                                
+                            {% elseif field.type == 'checkbox' %}
+                                {{ (form.value(field.name) == 1) ? "PLUGIN_FORM.YES"|t|e : "PLUGIN_FORM.NO"|t|e }}
+                            {% elseif field.type == 'select' %}
+                                {{ field.options[form.value(field.name)]|e }}
+                            {% else %}
+                                {{ string(form.value(field.name))|nl2br }}
+                            {% endif %}
+                        {% endblock %}
+                    
+                {% endblock %}
+            {% endif %}
+        {% else %}
+            {% if field.fields %}
+                {{ _self.render_field(form, field.fields) }}
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+
+    
+    {{ string(form.value(fields['message'].name))|nl2br }}
+{% endmacro %}
+
+{{ _self.render_field(form, form.fields) }} 

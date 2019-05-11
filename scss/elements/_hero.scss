@@ -1,0 +1,18 @@
+.site-hero{
+    height: 80vh;
+    display: flex;
+    align-items: flex-end;
+    background-size: cover;
+    margin: 0;
+    .container{
+        width: 100%;
+        padding-bottom: 5.6rem;
+        h1{
+            font-family: $font_script;
+            font-size: $font_size_xl;
+            color: white;
+            text-shadow: 1px 1px 6px black;
+            font-weight: 400;
+        }
+    }
+}

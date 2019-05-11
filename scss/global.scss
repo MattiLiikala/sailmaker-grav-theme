@@ -1,0 +1,28 @@
+@import 'vars';
+@import 'mixins';
+
+html {
+    font-size: 62.5%; // 1rem ~= 10px
+}
+
+body {
+    font-size: 1.6em; // Use em for root element, as webkit/blink breaks if rem is used
+    line-height: 1.333;
+    background-color: white;
+    color: $color_body;
+    font-family: $font_body;
+    max-width: 1500px;
+    margin: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@import 'helpers/reset';
+@import 'helpers/type';
+@import 'helpers/content';
+
+@import'elements/header';
+
+@import 'elements/hero';
+@import 'elements/text';
+@import 'elements/inquiry';

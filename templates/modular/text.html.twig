@@ -1,0 +1,22 @@
+{% set image = page.media.images|first %}
+
+<section class="section modular-text">
+    <div class="container content-wrap">
+        <div class="columns {{ page.header.image_align|default('align-right') }} {{ image ? 'has-image':''}}">
+            {% if image %}
+            <div class="column text">
+                {{ content|raw }}
+            </div>
+            <div class="column image">
+                {% if image %}
+                    {{ image.html|raw }}
+                {% endif %}
+            </div>
+            {% else %}
+            <div class="column">
+                {{ content|raw }}
+            </div>
+            {% endif %}
+        </div>
+    </section>
+</section>

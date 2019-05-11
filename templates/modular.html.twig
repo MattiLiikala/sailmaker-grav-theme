@@ -1,0 +1,14 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block body %}
+    <section id="body">
+        {% block hero %}
+            {% for module in page.collection() if module.template == 'modular/hero' %}
+                {{ module.content }}
+            {% endfor %}
+        {% endblock %}
+        {% for module in page.collection() if module.template != 'modular/hero' %}
+            {{ module.content }}
+        {% endfor %}
+    </section>
+{% endblock %}

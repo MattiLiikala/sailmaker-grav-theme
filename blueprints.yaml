@@ -1,0 +1,27 @@
+name: Sailmaker
+version: 0.1.0
+description: Sailmaker website theme
+icon: rebel
+author:
+  name: Matti Liikala
+  email: matti.m.liikala@gmail.com
+homepage: https://github.com/MattiLiikala/grav-theme-sailmaker
+demo: http://demo.yoursite.com
+keywords: grav, theme, etc
+bugs: https://github.com/MattiLiikala/grav-theme-sailmaker/issues
+readme: https://github.com/MattiLiikala/grav-theme-sailmaker/blob/develop/README.md
+license: MIT
+
+form:
+  validation: loose
+  fields:
+    dropdown.enabled:
+        type: toggle
+        label: Dropdown in Menu
+        highlight: 1
+        default: 1
+        options:
+          1: PLUGIN_ADMIN.ENABLED
+          0: PLUGIN_ADMIN.DISABLED
+        validate:
+          type: bool

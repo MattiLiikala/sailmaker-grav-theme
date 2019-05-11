@@ -1,0 +1,63 @@
+.modular-text{
+    .has-image{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .align-left{
+        @include breakpoint(tablet){
+            flex-direction: row-reverse;
+        }
+    }
+    .columns{
+        .text{
+            width: 100%;
+            padding-right: 3rem;
+            margin-bottom: 4.6rem;
+            @include breakpoint(tablet){
+                width: 60%;
+            }
+            h2{
+                position: relative;
+                display: block;
+                padding-left: 6.2rem;
+                &:before{
+                    content: "";
+                    left: 4.8rem;
+                    bottom: -4.5rem;
+                    display: block;
+                    position: absolute;
+                    width: 1px;
+                    height: 12.4rem;
+                    background-image: linear-gradient(to bottom, $color_blue 50%, transparent 0%);
+                    background-position: left;
+                    background-size: 1px 14px;
+                    background-repeat: repeat-y;
+                }
+                &:after{
+                    content: "";
+                    left: 1.6rem;
+                    display: block;
+                    position: absolute;
+                    height: 1px;
+                    width: 17rem;
+                    background-image: linear-gradient(to right, $color_blue 50%, transparent 0%);
+                    background-position: top;
+                    background-size: 14px 1px;
+                    background-repeat: repeat-x;
+                }
+            }
+            p{
+                padding-left: 9rem;
+            }
+        }
+        .image{
+           width: 100%;
+           @include breakpoint(tablet){
+               width: 40%;
+           }
+           img{
+               max-width: 100%;
+           }
+        }
+    }
+}

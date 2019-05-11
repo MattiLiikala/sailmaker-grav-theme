@@ -1,0 +1,40 @@
+.inquiry{
+    background-color: $color_bluegray;
+    padding-top: 3.6rem;
+    padding-bottom: 4.6rem;
+    .container{
+        h2{
+            position: relative;
+            display: block;
+            padding-left: 6.2rem;
+            &:before{
+                content: "";
+                left: 4.8rem;
+                bottom: -4.5rem;
+                display: block;
+                position: absolute;
+                width: 1px;
+                height: 12.4rem;
+                background-image: linear-gradient(to bottom, $color_blue 50%, transparent 0%);
+                background-position: left;
+                background-size: 1px 14px;
+                background-repeat: repeat-y;
+            }
+            &:after{
+                content: "";
+                left: 1.6rem;
+                display: block;
+                position: absolute;
+                height: 1px;
+                width: 17rem;
+                background-image: linear-gradient(to right, $color_blue 50%, transparent 0%);
+                background-position: top;
+                background-size: 14px 1px;
+                background-repeat: repeat-x;
+            }
+        }
+        form{
+            padding-left: 9rem;
+        }
+    }
+}

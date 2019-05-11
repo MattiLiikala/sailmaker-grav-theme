@@ -1,0 +1,29 @@
+@mixin breakpoint($bp)
+{
+    @if ($bp == phone) {
+        @media screen and (min-width: $bpPhonePx) {
+            @content;
+        }
+    }
+    @else if ($bp == phone-m) {
+      @media screen and (min-width: $bpPhoneMediumPx) {
+        @content;
+      }
+    } @else if ($bp == tablet) {
+        @media screen and (min-width: $bpTabletPx) {
+            @content;
+        }
+    } @else if ($bp == laptop) {
+        @media screen and (min-width: $bpLaptopPx) {
+            @content;
+        }
+    } @else if ($bp == desktop) {
+        @media screen and (min-width: $bpDesktopPx) {
+            @content;
+        }
+    } @else {
+        @media screen and (min-width: $bp) {
+            @content;
+        }
+    }
+}
